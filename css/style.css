@@ -1,0 +1,46 @@
+@import url("/.there-be-dragons/global.css");
+
+:root {
+  --star-primary-color: gold;
+  --star-secondary-color: #ffffff5e;
+}
+
+.headline {
+  margin: 0;
+  font-family: "Great Vibes", Geneva, Verdana, sans-serif;
+  position: absolute;
+  font-size: 3rem;
+  top: 30%;
+  width: 100%;
+  color: tomato;
+  z-index: 2;
+  background-color: white;
+  padding: 0.8rem 0 0.5rem;
+}
+
+.flipcard {
+  transform: rotateY(180deg);
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+  border: 1rem solid white;
+  position: relative;
+}
+
+.sparkle {
+  flex-grow: 1;
+}
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

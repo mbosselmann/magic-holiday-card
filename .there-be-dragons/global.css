@@ -1,0 +1,83 @@
+/* pacifico-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/pacifico-v22-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* great-vibes-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Great Vibes";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/great-vibes-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --width: 100%;
+  --height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(211, 208, 206);
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
+
+.card section {
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  max-width: 500px;
+  max-height: 790px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 0;
+}
+
+@media (max-width: 500px) {
+  .card section {
+    max-height: 100vh;
+  }
+}
+
+.front {
+  position: relative;
+  background-color: white;
+  box-shadow: 2px 11px 26px 2px rgba(17, 17, 26, 0.12);
+}
+
+.back {
+  padding: 1em;
+  background-color: #fff;
+  transform: rotateY(180deg);
+}
+
+.headline {
+  font-size: 2em;
+  text-align: center;
+}
+
+p {
+  margin: 0 0 10px 0;
+}
