@@ -1,4 +1,4 @@
-@import url("/.there-be-dragons/global.css");
+@import url("/.where-the-magic-is/global.css");
 
 :root {
   --star-primary-color: gold;
@@ -10,9 +10,9 @@
   font-family: "Great Vibes", Geneva, Verdana, sans-serif;
   position: absolute;
   font-size: 3rem;
-  top: 30%;
+  top: 60%;
   width: 100%;
-  color: tomato;
+  color: black;
   z-index: 2;
   background-color: white;
   padding: 0.8rem 0 0.5rem;
