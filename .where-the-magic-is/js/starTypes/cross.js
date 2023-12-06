@@ -1,5 +1,4 @@
 export function drawCrossStar(ctx, star, color) {
-  // Drawing a cross
   ctx.strokeStyle = `${color.slice(0, -1)}, ${star.alpha})`;
   ctx.lineWidth = 2;
   ctx.beginPath();
