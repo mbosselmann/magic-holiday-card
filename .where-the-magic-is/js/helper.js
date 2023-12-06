@@ -13,3 +13,17 @@ export function getRgbFromColorName(colorName) {
 
   return rgbColor;
 }
+
+export function calculateAmountOfStars(amount) {
+  if (amount > 0 && amount < 200) {
+    return amount;
+  }
+
+  if (amount <= 0) {
+    return 0;
+  }
+
+  if (amount >= 200) {
+    return 200;
+  }
+}
