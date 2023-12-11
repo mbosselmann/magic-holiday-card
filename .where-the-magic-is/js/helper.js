@@ -2,9 +2,9 @@ export function getRandom(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-export function getRgbFromColorName(colorName) {
+export function getRgbFromColorCode(colorCode) {
   const tempDiv = document.createElement("div");
-  tempDiv.style.color = colorName;
+  tempDiv.style.color = colorCode;
   document.body.appendChild(tempDiv);
 
   const rgbColor = getComputedStyle(tempDiv).color;

@@ -48,8 +48,8 @@ export function createStar(x, y, size) {
     minAlpha: 0.4,
     growing: true,
     animationSpeed: 0.08,
-    rotation: 0, // Rotation in degrees
-    rotationSpeed: 2, // Random rotation speed
+    rotation: 0,
+    rotationSpeed: 2,
     animationEnded: false,
   };
 }

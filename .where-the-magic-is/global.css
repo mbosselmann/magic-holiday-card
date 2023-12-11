@@ -25,6 +25,33 @@
   src: url("./fonts/gluten-v16-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+/* allison-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Allison";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/allison-v11-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* handlee-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Handlee";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/handlee-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* peralta-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Peralta";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/peralta-v19-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 :root {
   --width: 100%;
   --height: 100%;
@@ -32,6 +59,7 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -40,7 +68,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(211, 208, 206);
 }
 
 .card {
@@ -50,7 +77,7 @@ body {
   justify-content: center;
   align-items: center;
   transform-style: preserve-3d;
-  transition: all 0.8s ease;
+  transition: all 0.5s linear;
 }
 
 .card section {
@@ -74,19 +101,51 @@ body {
   position: relative;
   background-color: white;
   box-shadow: 2px 11px 26px 2px rgba(17, 17, 26, 0.12);
+  display: flex;
+  flex-direction: column;
+  border: 1rem solid white;
 }
 
 .back {
   padding: 1em;
   background-color: #fff;
   transform: rotateY(180deg);
+  display: grid;
+  place-content: center;
 }
 
 .headline {
-  font-size: 2em;
   text-align: center;
+  position: absolute;
+  font-size: 3rem;
+  top: 60%;
+  width: 100%;
+  z-index: 2;
+  margin: 0;
 }
 
 p {
   margin: 0 0 10px 0;
+}
+
+.postcardimage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: opacity 1s ease-in;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  tp {
+    opacity: 1;
+  }
 }

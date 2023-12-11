@@ -4,14 +4,12 @@ import { drawTwinkleStar } from "../starTypes/twinkle.js";
 
 export function drawStar(ctx, star, color) {
   ctx.save();
-  // Translate context to star's position
   ctx.translate(star.x, star.y);
 
-  // Rotate around the star's center
-  ctx.rotate((star.rotation * Math.PI) / 180); // Convert degrees to radians
+  ctx.rotate((star.rotation * Math.PI) / 180);
   ctx.globalCompositeOperation = "lighter";
-  ctx.shadowBlur = 30; // Adjust for desired glow size
-  ctx.shadowColor = "white"; // Use star's color for the glow
+  ctx.shadowBlur = 30;
+  ctx.shadowColor = "white";
 
   switch (star.type) {
     case "dot":

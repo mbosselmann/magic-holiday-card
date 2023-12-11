@@ -1,4 +1,4 @@
-import { calculateAmountOfStars, getRgbFromColorName } from "./helper.js";
+import { calculateAmountOfStars, getRgbFromColorCode } from "./helper.js";
 import { animateStars } from "./starLogic/animateStars.js";
 import { createStars } from "./starLogic/createStars.js";
 
@@ -9,16 +9,19 @@ card.addEventListener("click", () => {
 
 let timeoutId = null;
 
-function setupCanvas(amount, color) {
-  const amountOfStars = calculateAmountOfStars(amount);
-  const canvas = document.querySelector("canvas");
+export function setupCanvas(amount, color) {
   const sparkleContainer = document.querySelector(".front");
+
+  const amountOfStars = calculateAmountOfStars(amount);
+  const starColor = getRgbFromColorCode(color);
+
+  const canvas = document.querySelector("canvas");
   const ctx = canvas.getContext("2d");
   canvas.width = sparkleContainer.offsetWidth * 2;
   canvas.height = sparkleContainer.offsetHeight * 2;
-  const rgbColor = getRgbFromColorName(color);
+
   let stars = createStars(ctx, amountOfStars, 40);
-  animateStars(ctx, stars, rgbColor, 40);
+  animateStars(ctx, stars, starColor, 40);
 
   function resizeCanvas() {
     if (timeoutId) {
@@ -31,10 +34,8 @@ function setupCanvas(amount, color) {
 
     timeoutId = setTimeout(() => {
       stars = createStars(ctx, amountOfStars, 40);
-      animateStars(ctx, stars, rgbColor, 40);
+      animateStars(ctx, stars, starColor, 40);
     }, 1000);
   }
   window.addEventListener("resize", resizeCanvas);
 }
-
-setupCanvas(200, "white");
