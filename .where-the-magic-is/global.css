@@ -114,10 +114,9 @@ body {
   place-content: center;
 }
 
-.headline {
+.front .headline {
   text-align: center;
   position: absolute;
-  font-size: 3rem;
   top: 60%;
   width: 100%;
   z-index: 2;
